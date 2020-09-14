@@ -13,7 +13,7 @@
 
 ## Participation Exercise
 
-- Add the debug layer to the default scene in the Playground
+- Add the debug layer to the default scene in the [Babylon Playground](https://playground.babylonjs.com/)
 - Use the scene explorer and inspector to manipulate the objects in the scene, as follows:
   - Change the scale of the ground
   - Change the position of the sphere and make it partially transparent
