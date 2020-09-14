@@ -1,18 +1,23 @@
+/* CSCI 5619 Lecture 2, Fall 2020
+ * Author: Evan Suma Rosenberg
+ * License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+ */ 
+
 import { Engine } from "@babylonjs/core/Engines/engine";
 import { Scene } from "@babylonjs/core/scene";
 import { Vector3 } from "@babylonjs/core/Maths/math";
 import { UniversalCamera } from "@babylonjs/core/Cameras/universalCamera";
 import { HemisphericLight } from "@babylonjs/core/Lights/hemisphericLight";
-import { StandardMaterial} from "@babylonjs/core/Materials/standardMaterial"
+import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial"
 import { Texture } from "@babylonjs/core/Materials/Textures/texture"
-
 
 // Required to populate the Create methods on the mesh class. 
 // Without this, the bundle would be smaller,
 // but the createXXX methods from mesh would not be accessible.
 import {MeshBuilder} from  "@babylonjs/core/Meshes/meshBuilder";
+import "@babylonjs/core/Materials/standardMaterial"
 
-// import debug layer
+// Import debug layer
 import "@babylonjs/inspector"
 
 /******* Add the Game class with a static CreateScene function ******/
@@ -47,14 +52,18 @@ class Game
         // Our built-in 'ground' shape.
         var ground = MeshBuilder.CreateGround("ground", {width: 100, height: 100}, scene);
 
+        // Import a grid texture and set it to be tiled
         var gridTexture = new Texture("textures/grid.png", scene);
         gridTexture.uScale = 100;
         gridTexture.vScale = 100;
 
+        // Create a ground material and assign it to the ground object
         var groundMaterial = new StandardMaterial("groundMaterial", scene);
         groundMaterial.diffuseTexture = gridTexture;
         ground.material = groundMaterial;
 
+        // Show the debug scene explorer and object inspector
+        // You should comment this out when you build your final program 
         scene.debugLayer.show();
 
         return scene;
@@ -70,7 +79,7 @@ const canvas = document.getElementById("renderCanvas") as HTMLCanvasElement;
 const engine = new Engine(canvas, true); 
 
 // Call the createScene function
-const scene = Game.CreateScene(engine, engine.getRenderingCanvas() as HTMLCanvasElement);
+const scene = Game.CreateScene(engine, canvas);
 
 // Register a render loop to repeatedly render the scene
 engine.runRenderLoop(function () 
