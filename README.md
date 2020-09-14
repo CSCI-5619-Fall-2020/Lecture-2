@@ -8,7 +8,8 @@
 4. Writing your first Babylon program from scratch
 5. Using the [Babylon Playground](https://playground.babylonjs.com/)
 6. Referencing [Babylon 101](https://doc.babylonjs.com/babylon101/)
-7. Overview of [Assignment 1](https://github.com/CSCI-5619-Fall-2020/Assignment-1)
+7. Building and uploading to a web server
+8. Introduction to [Assignment 1](https://github.com/CSCI-5619-Fall-2020/Assignment-1)
 
 ## Participation Exercise
 
